@@ -34,6 +34,5 @@ setup(name='mediameter-cliff',
     include_package_data=True,
     install_requires=['requests'],
     license='MIT',
-    zip_safe=False,
-    extras_require={'db': ['pypubsub','pymongo']}
+    zip_safe=False
 )

@@ -2,3 +2,8 @@ venv
 *.log
 *.pyc
 settings.config
+.pypirc
+dist
+*.egg
+mediameter_cliff.egg-info
+README.rst

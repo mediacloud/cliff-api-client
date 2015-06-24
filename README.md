@@ -186,7 +186,7 @@ This will give you results like this:
 Development
 -----------
 
-If you want to work on this API client, then first clone this repo and install the dependencies
+If you want to work on this API client, then first clone [the source repo from GitHub](https://github.com/c4fcm/CLIFF-API-Client) and install the dependencies
 ```
 pip install -r requirements.pip
 ```

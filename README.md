@@ -197,6 +197,6 @@ server.  Now you should be able to develop!
 Version History
 ---------------
 
-* __v1.2.0__: points at CLIFF v2.2.0 (adss ancestry to `geonamesLookup` helper)
+* __v1.1.0__: points at CLIFF v2.2.0 (adss ancestry to `geonamesLookup` helper)
 * __v1.0.2__: first release to PyPI
 

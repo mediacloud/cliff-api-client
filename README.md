@@ -134,13 +134,52 @@ This will give you results like this:
     "countryCode": "US",
     "featureCode": "SCH",
     "featureClass": "S",
+    "parent": {
+      "id": 4943909,
+      "lon": -71.39184,
+      "name": "Middlesex County",
+      "countryGeoNameId": "6252001",
+      "countryCode": "US",
+      "featureCode": "ADM2",
+      "featureClass": "A",
+      "parent": {
+        "id": 6254926,
+        "lon": -71.10832,
+        "name": "Massachusetts",
+        "countryGeoNameId": "6252001",
+        "countryCode": "US",
+        "featureCode": "ADM1",
+        "featureClass": "A",
+        "parent": {
+          "id": 6252001,
+          "lon": -98.5,
+          "name": "United States",
+          "countryGeoNameId": "6252001",
+          "countryCode": "US",
+          "featureCode": "PCLI",
+          "featureClass": "A",
+          "stateCode": "00",
+          "lat": 39.76,
+          "stateGeoNameId": "",
+          "population": 310232863
+        },
+        "stateCode": "MA",
+        "lat": 42.36565,
+        "stateGeoNameId": "6254926",
+        "population": 6433422
+      },
+      "stateCode": "MA",
+      "lat": 42.48555,
+      "stateGeoNameId": "6254926",
+      "population": 1503085
+    },
     "stateCode": "MA",
     "lat": 42.35954,
     "stateGeoNameId": "6254926",
     "population": 0
   },
   "status": "ok",
-  "version": "2.1.1"
+  "version": "2.2.0"
 }
 ```
 
@@ -154,3 +193,10 @@ pip install -r requirements.pip
 
 Then copy `settings.config.sample` to `settings.config` and put in the url and port of your CLIFF 
 server.  Now you should be able to develop!
+
+Version History
+---------------
+
+* __v1.2.0__: points at CLIFF v2.2.0 (adss ancestry to `geonamesLookup` helper)
+* __v1.0.2__: first release to PyPI
+

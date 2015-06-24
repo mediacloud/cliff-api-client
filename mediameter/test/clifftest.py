@@ -24,3 +24,5 @@ class CliffTest(unittest.TestCase):
         self.assertEqual(results['lon'],-71.09172)
         self.assertEqual(results['lat'],42.35954)
         self.assertEqual(results['name'],"Massachusetts Institute of Technology")
+        self.assertEqual(results['parent']['name'],"Middlesex County")
+        self.assertEqual(results['parent']['parent']['name'],"Massachusetts")

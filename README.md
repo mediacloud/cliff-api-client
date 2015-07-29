@@ -112,7 +112,7 @@ This will return results like this:
   },
   "status": "ok",
   "milliseconds": 22,
-  "version": "2.1.1"
+  "version": "2.3.0"
 }
 ```
 
@@ -179,7 +179,7 @@ This will give you results like this:
     "population": 0
   },
   "status": "ok",
-  "version": "2.2.0"
+  "version": "2.3.0"
 }
 ```
 
@@ -197,6 +197,7 @@ server.  Now you should be able to develop!
 Version History
 ---------------
 
-* __v1.1.0__: points at CLIFF v2.2.0 (adss ancestry to `geonamesLookup` helper)
+* __v1.2.0__: points at CLIFF v2.3.0 (updates Stanford NER & has new plugin architecture)
+* __v1.1.0__: points at CLIFF v2.2.0 (adds ancestry to `geonamesLookup` helper)
 * __v1.0.2__: first release to PyPI
 

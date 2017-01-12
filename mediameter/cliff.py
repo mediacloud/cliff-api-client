@@ -41,13 +41,13 @@ class Cliff():
 
     def _parseQuery(self,path,text,demonyms=False):
         payload = {'q':text,'replaceAllDemonyms':self._demonymsText(demonyms)}
-        self._log.debug("Querying "+path+" (demonyms="+str(demonyms)+")")
+        self._log.debug("Querying %r (demonyms=%r)", path, demonyms)
         return self._query(path,payload)
     
     def _query(self,path,args):
         try:
             r = requests.post( self._urlTo(path), data=args)
-            self._log.debug('CLIFF says '+r.content)
+            self._log.debug('CLIFF says %r', r.content)
             return r.json()
         except requests.exceptions.RequestException as e:
             self._log.exception(e)

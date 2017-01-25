@@ -1,6 +1,13 @@
 import logging, json
 import requests
 
+
+_placename_replaces = [
+    ('Washington, DC', 'Washington DC'),
+    ('Washington, D.C.', 'Washington DC'),
+]
+
+
 class Cliff():
     '''
     Make requests to a CLIFF geo-parsing / NER server
@@ -22,6 +29,8 @@ class Cliff():
         self._log.info("initialized CLIFF @ %s:%d", self._host,self._port)
 
     def parseText(self,text,demonyms=False):
+        for target, replace in _placename_replaces:
+            text = text.replace(target, replace)
         return self._parseQuery(self.PARSE_TEXT_PATH, text, demonyms)
 
     def parseSentences(self,json_object,demonyms=False):

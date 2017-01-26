@@ -7,25 +7,14 @@ version = ''
 with open('mediameter/__init__.py', 'r') as fd:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', fd.read(), re.MULTILINE).group(1)
 
-if sys.argv[1]=="sdist":
-    try:
-        import pypandoc
-        long_description = pypandoc.convert('README.md', 'rst')
-    except(IOError, ImportError) as e:
-        long_description = open('README.md').read()
-        logging.exception(e)
-    f = open('README.rst', 'w')
-    f.write(long_description)
-    f.close()
-
-readme_rst = ''
-with open('README.rst', 'r') as f:
-    readme_rst = f.read()
+readme = ''
+with open('README.md', 'r') as f:
+    readme = f.read()
 
 setup(name='mediameter-cliff',
     version=version,
     description='MediaMeter CLIFF API Client Library',
-    long_description=readme_rst,
+    long_description=readme,
     author='Rahul Bhargava',
     author_email='rahulb@media.mit.edu',
     url='http://cliff.mediameter.org',

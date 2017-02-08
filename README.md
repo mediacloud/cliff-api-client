@@ -209,6 +209,7 @@ server.  Now you should be able to develop!
 Version History
 ---------------
 
+* __v1.3.0__: updates for python3, support for client-side text replacements
 * __v1.2.0__: points at CLIFF v2.3.0 (updates Stanford NER & has new plugin architecture)
 * __v1.1.0__: points at CLIFF v2.2.0 (adds ancestry to `geonamesLookup` helper)
 * __v1.0.2__: first release to PyPI

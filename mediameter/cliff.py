@@ -4,10 +4,11 @@ import requests
 class Cliff():
     """Make requests to a CLIFF geo-parsing / NER server"""
 
-    PARSE_TEXT_PATH = "/cliff-2.3.0/parse/text"
-    PARSE_NLP_JSON_PATH = "/cliff-2.3.0/parse/json"
-    PARSE_SENTENCES_PATH = "/cliff-2.3.0/parse/sentences"
-    GEONAMES_LOOKUP_PATH = "/cliff-2.3.0/geonames"
+    PARSE_TEXT_PATH = "/cliff-2.4.1/parse/text"
+    PARSE_NLP_JSON_PATH = "/cliff-2.4.1/parse/json"
+    PARSE_SENTENCES_PATH = "/cliff-2.4.1/parse/sentences"
+    GEONAMES_LOOKUP_PATH = "/cliff-2.4.1/geonames"
+    EXTRACT_TEXT_PATH = "/cliff-2.4.1/extract"
 
     JSON_PATH_TO_ABOUT_COUNTRIES = 'results.places.about.countries'
 
@@ -33,6 +34,9 @@ class Cliff():
     def geonamesLookup(self, geonames_id):
         return self._query(self.GEONAMES_LOOKUP_PATH, {'id': geonames_id})['results']
 
+    def extractContent(self, url):
+        return self._getQuery(self.EXTRACT_TEXT_PATH, {'url': url})
+
     def _demonymsText(self, demonyms=False):
         return "true" if demonyms else "false"
 
@@ -41,7 +45,7 @@ class Cliff():
 
     def _getReplacedText(self, text):
         replaced_text = text
-        for replace, find in self._replacements.iteritems():
+        for replace, find in self._replacements.items():
             replaced_text = text.replace(find, replace)
         return replaced_text
 
@@ -60,3 +64,12 @@ class Cliff():
             self._log.exception(e)
         return ""
 
+    def _getQuery(self, path, args):
+        try:
+            url = self._urlTo(path)
+            r = requests.get(url, params=args)
+            self._log.debug('CLIFF says %r', r.content)
+            return r.json()
+        except requests.exceptions.RequestException as e:
+            self._log.exception(e)
+        return ""

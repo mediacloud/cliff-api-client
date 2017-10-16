@@ -21,6 +21,13 @@ class CliffTest(unittest.TestCase):
         self.assertEqual(results['places']['mentions'][0]['id'], 1261481)
         self.assertEqual(len(results['people']), 1)
 
+    def testExtractContent(self):
+        test_url = "http://www.foxnews.com/sports/2017/10/16/national-anthem-protests-florida-man-takes-boycott-jags-and-nfl-message-to-sky.html"
+        results = self._cliff.extractContent(test_url)['results']
+        self.assertEqual(test_url, results['url'])
+        self.assertTrue(len(results['title']) > 50)
+        self.assertTrue(len(results['text']) > 100)
+
     def testGeonamesLookup(self):
         results = self._cliff.geonamesLookup(4943351)
         self.assertEqual(results['id'], 4943351)

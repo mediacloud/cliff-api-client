@@ -209,6 +209,8 @@ server.  Now you should be able to develop!
 Version History
 ---------------
 
+* __v1.4.0__: upgrade to CLIFF v2.4.1, add support for extractContent endpoint
+* __v1.3.1__: updates for python3
 * __v1.3.0__: updates for python3, support for client-side text replacements
 * __v1.2.0__: points at CLIFF v2.3.0 (updates Stanford NER & has new plugin architecture)
 * __v1.1.0__: points at CLIFF v2.2.0 (adds ancestry to `geonamesLookup` helper)

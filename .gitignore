@@ -7,3 +7,4 @@ dist
 *.egg
 mediameter_cliff.egg-info
 README.rst
+.idea

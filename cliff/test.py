@@ -12,7 +12,7 @@ class BasicCliffTest(unittest.TestCase):
     def setUp(self):
         self._config = ConfigParser.ConfigParser()
         self._config.read('settings.config')
-        self._cliff = Cliff(self._config.get('cliff', 'host'), self._config.get('cliff', 'port'))
+        self._cliff = Cliff(self._config.get('cliff', 'url'))
 
     def test_parse_text(self):
         results = self._cliff.parse_text("This is about Einstien at the IIT in New Delhi.")['results']
@@ -47,9 +47,7 @@ class BasicCliffTest(unittest.TestCase):
         mention = results['places']['mentions'][0]
         self.assertEqual(GEONAME_LONDON_UK, mention['id'])
         # now see if it gets the city with replacements
-        replacing_cliff = Cliff(self._config.get('cliff', 'host'),
-                                self._config.get('cliff', 'port'),
-                                replacements)
+        replacing_cliff = Cliff(self._config.get('cliff', 'url'), text_replacements=replacements)
         results = replacing_cliff.parse_text("This is about London.")['results']
         replaced_mention = results['places']['mentions'][0]
         self.assertEqual(GEONAME_LONDERRY_NH, replaced_mention['id'])

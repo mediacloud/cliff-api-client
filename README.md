@@ -17,7 +17,7 @@ Then instantiate and use it like this:
 
 ```python
 from cliff.api import Cliff
-my_cliff = Cliff('http://myserver.com',8080)
+my_cliff = Cliff('http://myserver.com:8080')
 my_cliff.parse_text("This is about Einstien at the IIT in New Delhi.")
 ```
 
@@ -112,14 +112,14 @@ This will return results like this:
   },
   "status": "ok",
   "milliseconds": 22,
-  "version": "2.3.0"
+  "version": "2.4.1"
 }
 ```
 
 You can also just get info from the GeoNames database inside CLIFF:
 ```python
 from cliff.api import Cliff
-my_cliff = Cliff('http://myserver.com',8080)
+my_cliff = Cliff('http://myserver.com:8080')
 my_cliff.geonames_lookup(4943351)
 ```
 
@@ -179,7 +179,7 @@ This will give you results like this:
     "population": 0
   },
   "status": "ok",
-  "version": "2.3.0"
+  "version": "2.4.1"
 }
 ```
 
@@ -209,7 +209,9 @@ server.  Now you should be able to develop!
 Version History
 ---------------
 
-* __v2.0.0__: move to mediacloud naming, use underscored method naming, remove deprecated NLP endpoint
+* __v2.0.2__: update examples in readme file
+* __v2.0.1__: init with url instead of host/port
+* __v2.0.0__: move to mediacloud naming, underscored method names, remove deprecated NLP endpoint
 * __v1.4.0__: upgrade to CLIFF v2.4.1, add support for extractContent endpoint
 * __v1.3.1__: updates for python3
 * __v1.3.0__: updates for python3, support for client-side text replacements

@@ -16,12 +16,11 @@ class Cliff:
 
     STATUS_OK = "ok"
 
-    def __init__(self, host, port, text_replacements=None):
+    def __init__(self, url, text_replacements=None):
         self._log = logging.getLogger(__name__)
-        self._host = host
-        self._port = int(port)
+        self._url = url
         self._replacements = text_replacements if text_replacements is not None else {}
-        self._log.info("initialized CLIFF @ %s:%d", self._host, self._port)
+        self._log.info("initialized CLIFF @ {}".format(url))
 
     def parse_text(self, text, demonyms=False):
         cleaned_text = self._get_replaced_text(text)
@@ -41,7 +40,7 @@ class Cliff:
         return "true" if demonyms else "false"
 
     def _url_to(self, path):
-        return self._host+":"+str(self._port)+path
+        return "{}{}".format(self._url, path)
 
     def _get_replaced_text(self, text):
         replaced_text = text

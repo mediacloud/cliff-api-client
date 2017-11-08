@@ -5,6 +5,6 @@ settings.config
 .pypirc
 dist
 *.egg
-mediameter_cliff.egg-info
 README.rst
 .idea
+*egg-info*

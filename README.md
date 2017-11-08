@@ -1,7 +1,7 @@
-MediaMeter CLIFF API Client
+Media CLoud CLIFF API Client
 ===========================
 
-This is a simple Python client for the [MediaMeter CLIFF-CLAVIN geocoder](http://cliff.mediameter.org).
+This is a simple Python client for the [Media Cloud CLIFF-CLAVIN geocoder](http://cliff.mediacloud.org).
 
 Usage
 -----
@@ -10,15 +10,15 @@ If you just want to use this library to talk to a CLIFF server you have running 
 first install it
 
 ```
-pip install mediameter-cliff
+pip install mediacloud-cliff
 ```
 
 Then instantiate and use it like this:
 
 ```python
-from mediameter.cliff import Cliff
+from cliff.api import Cliff
 my_cliff = Cliff('http://myserver.com',8080)
-my_cliff.parseText("This is about Einstien at the IIT in New Delhi.")
+my_cliff.parse_text("This is about Einstien at the IIT in New Delhi.")
 ```
 
 This will return results like this:
@@ -118,9 +118,9 @@ This will return results like this:
 
 You can also just get info from the GeoNames database inside CLIFF:
 ```python
-from mediameter.cliff import Cliff
+from cliff.api import Cliff
 my_cliff = Cliff('http://myserver.com',8080)
-my_cliff.geonamesLookup(4943351)
+my_cliff.geonames_lookup(4943351)
 ```
 
 This will give you results like this:
@@ -186,7 +186,7 @@ This will give you results like this:
 Development
 -----------
 
-If you want to work on this API client, then first clone [the source repo from GitHub](https://github.com/c4fcm/CLIFF-API-Client) and install the dependencies
+If you want to work on this API client, then first clone [the source repo from GitHub](https://github.com/mitmedialab/CLIFF-API-Client) and install the dependencies
 ```
 pip install -r requirements.pip
 ```
@@ -197,18 +197,19 @@ server.  Now you should be able to develop!
 ## Distribution
 
 1. Run `python test.py` to make sure all the test pass
-2. Update the version number in `mediameter/__init__.py`
+2. Update the version number in `cliff/__init__.py`
 3. Make a brief note in the version history section in the README file about the changes
 4. Run `python setup.py sdist` to test out a version locally
 5. Then run `python setup.py sdist upload -r pypitest` to release a test version to PyPI's test server
 6. Run `pip install -i https://testpypi.python.org/pypi mediacloud` somewhere and then use it with Python to make sure the test release works.
 7. When you're ready to push to pypi run `python setup.py sdist upload -r pypi`
-8. Run `pip install mediameter-cliff` somewhere and then try it to make sure it worked.
+8. Run `pip install mediacloud-cliff` somewhere and then try it to make sure it worked.
 
 
 Version History
 ---------------
 
+* __v2.0.0__: move to mediacloud naming, use underscored method naming, remove deprecated NLP endpoint
 * __v1.4.0__: upgrade to CLIFF v2.4.1, add support for extractContent endpoint
 * __v1.3.1__: updates for python3
 * __v1.3.0__: updates for python3, support for client-side text replacements

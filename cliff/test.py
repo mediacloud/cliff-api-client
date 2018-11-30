@@ -22,11 +22,10 @@ class BasicCliffTest(unittest.TestCase):
         self.assertEqual(len(results['people']), 1)
 
     def test_extract_content(self):
-        test_url = "http://www.foxnews.com/sports/2017/10/16/national-anthem-protests-florida-man-takes-boycott-jags-and-nfl-message-to-sky.html"
+        test_url = "https://www.foxnews.com/us/temple-university-stands-by-marc-lamont-hill-after-cnn-fires-him-for-anti-israel-remarks"
         results = self._cliff.extract_content(test_url)
         results = results['results']
         self.assertEqual(test_url, results['url'])
-        self.assertTrue(len(results['title']) > 50)
         self.assertTrue(len(results['text']) > 100)
 
     def test_geonames_lookup(self):
@@ -35,8 +34,10 @@ class BasicCliffTest(unittest.TestCase):
         self.assertEqual(results['lon'], -71.09172)
         self.assertEqual(results['lat'], 42.35954)
         self.assertEqual(results['name'], "Massachusetts Institute of Technology")
-        self.assertEqual(results['parent']['name'], "Middlesex County")
-        self.assertEqual(results['parent']['parent']['name'], "Massachusetts")
+        self.assertEqual(results['parent']['name'], "City of Cambridge")
+        self.assertEqual(results['parent']['parent']['name'], "Middlesex County")
+        self.assertEqual(results['parent']['parent']['parent']['name'], "Massachusetts")
+        self.assertEqual(results['parent']['parent']['parent']['parent']['name'], "United States")
 
     def test_local_replacements(self):
         replacements = {

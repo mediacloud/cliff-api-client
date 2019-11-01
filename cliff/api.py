@@ -4,13 +4,13 @@ import requests
 
 
 class Cliff:
-    """Make requests to a CLIFF geo-parsing / NER server"""
+    # Make requests to a CLIFF geo-parsing / NER server
 
-    PARSE_TEXT_PATH = "/cliff-2.4.1/parse/text"
-    PARSE_NLP_JSON_PATH = "/cliff-2.4.1/parse/json"
-    PARSE_SENTENCES_PATH = "/cliff-2.4.1/parse/sentences"
-    GEONAMES_LOOKUP_PATH = "/cliff-2.4.1/geonames"
-    EXTRACT_TEXT_PATH = "/cliff-2.4.1/extract"
+    PARSE_TEXT_PATH = "/cliff-2.5.0/parse/text"
+    PARSE_NLP_JSON_PATH = "/cliff-2.5.0/parse/json"
+    PARSE_SENTENCES_PATH = "/cliff-2.5.0/parse/sentences"
+    GEONAMES_LOOKUP_PATH = "/cliff-2.5.0/geonames"
+    EXTRACT_TEXT_PATH = "/cliff-2.5.0/extract"
 
     JSON_PATH_TO_ABOUT_COUNTRIES = 'results.places.about.countries'
 

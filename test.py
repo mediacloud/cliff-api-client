@@ -1,6 +1,5 @@
 import logging
 import sys
-
 from cliff.test import *
 
 test_classes = [

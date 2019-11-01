@@ -5,6 +5,6 @@ settings.config
 .pypirc
 dist
 *.egg
-README.rst
 .idea
 *egg-info*
+.env

@@ -6,7 +6,7 @@ This is a simple Python client for the [Media Cloud CLIFF-CLAVIN geocoder](http:
 Usage
 -----
 
-If you just want to use this library to talk to a CLIFF server you have running somewhere, 
+If you just want to use this library to talk to a CLIFF server you have running somewhere,
 first install it
 
 ```
@@ -112,7 +112,7 @@ This will return results like this:
   },
   "status": "ok",
   "milliseconds": 22,
-  "version": "2.5.0"
+  "version": "2.6.0"
 }
 ```
 
@@ -179,7 +179,7 @@ This will give you results like this:
     "population": 0
   },
   "status": "ok",
-  "version": "2.5.0"
+  "version": "2.6.0"
 }
 ```
 
@@ -192,8 +192,10 @@ and install the dependencies
 nmake install
 ```
 
-Then copy `settings.config.sample` to `settings.config` and put in the url and port of your CLIFF 
-server.  Now you should be able to develop!
+Then make a `.env` file in this directory and put the url to your CLIFF server in it:
+```
+CLIFF_URL=http://localhost:8080
+```
 
 ## Distribution
 
@@ -208,15 +210,15 @@ server.  Now you should be able to develop!
 Version History
 ---------------
 
+* __v2.6.0__: upgrade to CLIFF v2.6.0 (adds multi-lingual support at query level and upgrades NER models)
 * __v2.5.0__: upgrade to CLIFF v2.5.0 (and keep version numbers roughly in sync)
 * __v2.1.0__: upgrade to CLIFF v2.4.2
 * __v2.0.2__: update examples in readme file
 * __v2.0.1__: init with url instead of host/port
-* __v2.0.0__: move to mediacloud naming, underscored method names, remove deprecated NLP endpoint
+* __v2.0.0__: move to `mediacloud` naming, underscored method names, remove deprecated NLP endpoint
 * __v1.4.0__: upgrade to CLIFF v2.4.1, add support for extractContent endpoint
 * __v1.3.1__: updates for python3
 * __v1.3.0__: updates for python3, support for client-side text replacements
 * __v1.2.0__: points at CLIFF v2.3.0 (updates Stanford NER & has new plugin architecture)
 * __v1.1.0__: points at CLIFF v2.2.0 (adds ancestry to `geonamesLookup` helper)
 * __v1.0.2__: first release to PyPI
-

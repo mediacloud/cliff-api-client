@@ -53,7 +53,7 @@ class Cliff:
         return replaced_text
 
     def _parse_query(self, path, text, demonyms=False, language=ENGLISH):
-        payload = {'q': text, 'replaceAllDemonyms': self._demonyms_text(demonyms), 'language': langauge}
+        payload = {'q': text, 'replaceAllDemonyms': self._demonyms_text(demonyms), 'language': language}
         self._log.debug("Querying %r (demonyms=%r)", path, demonyms)
         return self._query(path, payload)
 

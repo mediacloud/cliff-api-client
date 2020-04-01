@@ -112,7 +112,7 @@ This will return results like this:
   },
   "status": "ok",
   "milliseconds": 22,
-  "version": "2.6.0"
+  "version": "2.6.1"
 }
 ```
 
@@ -179,7 +179,7 @@ This will give you results like this:
     "population": 0
   },
   "status": "ok",
-  "version": "2.6.0"
+  "version": "2.6.1"
 }
 ```
 
@@ -210,6 +210,7 @@ CLIFF_URL=http://localhost:8080
 Version History
 ---------------
 
+* __v2.6.1__: upgrade to CLIFF v2.6.1 (internal build changes)
 * __v2.6.0__: upgrade to CLIFF v2.6.0 (adds multi-lingual support at query level and upgrades NER models)
 * __v2.5.0__: upgrade to CLIFF v2.5.0 (and keep version numbers roughly in sync)
 * __v2.1.0__: upgrade to CLIFF v2.4.2

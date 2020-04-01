@@ -8,3 +8,4 @@ dist
 .idea
 *egg-info*
 .env
+.python-version

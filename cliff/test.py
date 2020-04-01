@@ -1,6 +1,6 @@
 import unittest
 import os
-from api import Cliff
+from cliff.api import Cliff
 from dotenv import load_dotenv
 
 # load env-vars from .env file if there is one

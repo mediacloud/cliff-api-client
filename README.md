@@ -210,6 +210,7 @@ CLIFF_URL=http://localhost:8080
 Version History
 ---------------
 
+* __v2.6.2__: add timeout to constructor, change to bubble up any exceptions instead of swallowing silently
 * __v2.6.1__: upgrade to CLIFF v2.6.1 (internal build changes)
 * __v2.6.0__: upgrade to CLIFF v2.6.0 (adds multi-lingual support at query level and upgrades NER models)
 * __v2.5.0__: upgrade to CLIFF v2.5.0 (and keep version numbers roughly in sync)

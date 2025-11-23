@@ -2,6 +2,7 @@ import logging
 import json
 import requests
 
+DEFAULT_TIMEOUT = 30
 
 class Cliff:
     # Make requests to a CLIFF geo-parsing / NER server
@@ -20,9 +21,10 @@ class Cliff:
 
     STATUS_OK = "ok"
 
-    def __init__(self, url, text_replacements=None):
+    def __init__(self, url, text_replacements=None, timeout=DEFAULT_TIMEOUT):
         self._log = logging.getLogger(__name__)
         self._url = url
+        self._timeout = timeout
         self._replacements = text_replacements if text_replacements is not None else {}
         self._log.info("initialized CLIFF @ {}".format(url))
 
@@ -58,14 +60,10 @@ class Cliff:
         return self._query(path, payload)
 
     def _query(self, path, args):
-        try:
-            url = self._url_to(path)
-            r = requests.post(url, data=args)
-            self._log.debug('CLIFF says %r', r.content)
-            return r.json()
-        except requests.exceptions.RequestException as e:
-            self._log.exception(e)
-        return ""
+        url = self._url_to(path)
+        r = requests.post(url, data=args, timeout=self._timeout)
+        self._log.debug('CLIFF says %r', r.content)
+        return r.json()
 
     def _get_query(self, path, args):
         try:
